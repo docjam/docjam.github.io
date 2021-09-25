@@ -5,9 +5,7 @@ title: How-to mount E01 images in the SIFT workstation
 
 For this how-to, I will be using the forensic image provided by Cal Poly from their [Windows and Android Forensics CCIC Training](https://cci.calpoly.edu/2019-digital-forensics-downloads), but you can use any E01 image you find and follow along. 
 
-First, let us go over what an E01 image is. ASR Data developed the Expert witness compression format (E01) to store forensic images. 
-
-For a forensic investigator to examine any digital evidence in E01, they need to mount the file. Using the [SIFT Workstation VM](https://www.sans.org/tools/sift-workstation/) we have access to ewfmount, mmls, and mount commands. These commands will help us access basic information about the image.
+First, let us go over what an E01 image is. ASR Data developed the Expert witness compression format (E01) to store digital evidence. The image is a bit by bit copy of the original. For a forensic investigator to examine any digital evidence in E01, they need to mount the image. Using the [SIFT Workstation VM](https://www.sans.org/tools/sift-workstation/) we have access to ewfmount, mmls, and mount commands. These commands will help give us access to basic information about the image.
 
 **NOTE**
 If this is your first time using Linux, refer to the [manual page](https://www.man7.org/linux/man-pages/index.html) of each command before using them.
@@ -26,7 +24,7 @@ ewfmount thenameofyourimage.E01 /mnt/ewf
 
 ![image2](/images/20210923200551SIFTVM.png)
 
-- Make sure the image was mounted
+- List the image that was mounted
 
 ```
 ls -lah /mnt/ewf
@@ -63,11 +61,11 @@ ls -lah /mnt/windows_mount/
 
 ![image6](/images/20210924155439SIFTVM.png)
 
-The partitions will now be accessible from Files. 
+The image contents are now accessible from Files. 
 
 ![image7](/images/20210924161922SIFTVM.png)
 
-To unmount the images, use the umount command and work in reverse. 
+To unmount the image, use the umount command and work backwards. 
 
 ![image8](/images/20210924164438SIFTVM.png)
 
